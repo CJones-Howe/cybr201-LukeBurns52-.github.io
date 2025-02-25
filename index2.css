@@ -33,15 +33,8 @@ body {
 
 /* Media Query for Mobile Screens */
 @media (max-width: 760px) {
-    /* Initially hide the navigation links on mobile */
     .nav-links {
-        flex-direction: column; /* Stack items vertically on smaller screens */
-        position: absolute; /* Position menu absolutely */
-        top: 60px; /* Position below the navbar */
-        left: 0;
-        width: 100%; /* Full screen width */
-        background-color: #333; /* Background color for mobile menu */
-        display: none; /* Hide by default */
+        flex-direction: row; /* Keep the links in a row */
         padding: 10px 0;
     }
 
@@ -50,21 +43,12 @@ body {
         padding: 15px 0; /* Add space between items */
     }
 
-    /* Show menu when checkbox is checked (hamburger toggle) */
-    #menu-toggle:checked + .nav-links {
-        display: flex; /* Show links when menu is toggled */
-    }
-
-    /* Hamburger Button Styling */
-    .hamburger {
-        font-size: 2rem;
-        cursor: pointer;
-        color: white;
-        display: block; /* Show hamburger button on mobile */
-    }
-
-    /* Hide checkbox by default */
+    /* Remove all hidden or toggle functionality */
     #menu-toggle {
-        display: none;
+        display: none; /* No need for checkbox */
+    }
+
+    .hamburger {
+        display: none; /* No hamburger button needed */
     }
 }
