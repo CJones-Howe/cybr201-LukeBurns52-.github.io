@@ -1,0 +1,14 @@
+body {
+	font-family: Ariel, sans-serif;
+}
+
+.topnav {
+/*		justify-content: space- between;*/
+	align-items: center;
+	
+	
+}
+.nav-links {
+	list-style: none;
+	display: flex;
+}
