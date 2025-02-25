@@ -1,34 +1,70 @@
 body {
-	font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif; /* Corrected 'Ariel' to 'Arial' */
 }
 
 /* Top Navigation Styling */
 .topnav {
-/*		justify-content: space- between;*/
-	align-items: center;
-	padding: 15px;
-	
+    display: flex; /* Ensures flex layout for topnav */
+    justify-content: space-between; /* Space out items */
+    align-items: center; /* Align vertically */
+    padding: 15px;
+    background-color: #333; /* Background color for visibility */
 }
+
 .nav-links {
-	list-style: none;
-	display: flex;
+    list-style: none;
+    display: flex; /* Display links horizontally */
 }
+
 .nav-links li {
-	margin: 0 15px;
+    margin: 0 15px;
 }
 
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2rem;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #ffcc00; /* Hover effect */
+}
+
+/* Media Query for Mobile Screens */
 @media (max-width: 760px) {
-.nav-links {
-		flex-direction: column;
-		position: absolute;
-/*		top: 60px;
-		left: 0;
-		width: 100%;
-		padding: 10px 0;
-*/
-}
-.nav-links li (
-	text-align: center;
-}
+    /* Initially hide the navigation links on mobile */
+    .nav-links {
+        flex-direction: column; /* Stack items vertically on smaller screens */
+        position: absolute; /* Position menu absolutely */
+        top: 60px; /* Position below the navbar */
+        left: 0;
+        width: 100%; /* Full screen width */
+        background-color: #333; /* Background color for mobile menu */
+        display: none; /* Hide by default */
+        padding: 10px 0;
+    }
 
+    .nav-links li {
+        text-align: center; /* Center text on each menu item */
+        padding: 15px 0; /* Add space between items */
+    }
+
+    /* Show menu when checkbox is checked (hamburger toggle) */
+    #menu-toggle:checked + .nav-links {
+        display: flex; /* Show links when menu is toggled */
+    }
+
+    /* Hamburger Button Styling */
+    .hamburger {
+        font-size: 2rem;
+        cursor: pointer;
+        color: white;
+        display: block; /* Show hamburger button on mobile */
+    }
+
+    /* Hide checkbox by default */
+    #menu-toggle {
+        display: none;
+    }
 }
